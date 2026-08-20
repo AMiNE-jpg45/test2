@@ -16,9 +16,9 @@
 
     <header class="navbar">
 
-        <div class="logo">
+        <a href="#home" class="logo">
             URBAN<span>STORE</span>
-        </div>
+        </a>
 
         <nav>
             <a href="#home">Home</a>
@@ -28,8 +28,8 @@
             <a href="#contact">Contact</a>
         </nav>
 
-        <a href="#shop" class="cart">
-            🛒 Cart
+        <a href="#order" class="cart">
+            🛒 Cart <span id="cartCount">0</span>
         </a>
 
     </header>
@@ -118,20 +118,19 @@
                             149.90 DT
                         </strong>
 
-                        <a
-                            href="#order"
+                        <button
+                            type="button"
                             class="add"
                             onclick="selectProduct('Urban Sneakers')"
                         >
                             ADD +
-                        </a>
+                        </button>
 
                     </div>
 
                 </div>
 
             </div>
-
 
 
             <!-- PRODUCT 2 -->
@@ -145,7 +144,7 @@
                     </span>
 
                     <img
-                        src="images2.jpg"
+                        src="images.jpg"
                         alt="Classic Cap"
                     >
 
@@ -168,20 +167,19 @@
                             49.90 DT
                         </strong>
 
-                        <a
-                            href="#order"
+                        <button
+                            type="button"
                             class="add"
                             onclick="selectProduct('Classic Cap')"
                         >
                             ADD +
-                        </a>
+                        </button>
 
                     </div>
 
                 </div>
 
             </div>
-
 
 
             <!-- PRODUCT 3 -->
@@ -191,7 +189,7 @@
                 <div class="product-image">
 
                     <img
-                        src="images3.jpg"
+                        src="images.jpg"
                         alt="Street Backpack"
                     >
 
@@ -214,20 +212,19 @@
                             89.90 DT
                         </strong>
 
-                        <a
-                            href="#order"
+                        <button
+                            type="button"
                             class="add"
                             onclick="selectProduct('Street Backpack')"
                         >
                             ADD +
-                        </a>
+                        </button>
 
                     </div>
 
                 </div>
 
             </div>
-
 
 
             <!-- PRODUCT 4 -->
@@ -264,13 +261,13 @@
                             119.90 DT
                         </strong>
 
-                        <a
-                            href="#order"
+                        <button
+                            type="button"
                             class="add"
                             onclick="selectProduct('Street Hoodie')"
                         >
                             ADD +
-                        </a>
+                        </button>
 
                     </div>
 
@@ -278,11 +275,9 @@
 
             </div>
 
-
         </div>
 
     </section>
-
 
 
     <!-- ================= BANNER ================= -->
@@ -312,7 +307,6 @@
     </section>
 
 
-
     <!-- ================= ORDER ================= -->
 
     <section id="order" class="order">
@@ -339,15 +333,12 @@
             </div>
 
 
-
-            <!-- FORM CONNECTED TO PHP -->
+            <!-- NO PHP / NO POST -->
 
             <form
                 class="order-form"
-                action="order.php"
-                method="POST"
+                id="orderForm"
             >
-
 
                 <!-- NAME -->
 
@@ -364,7 +355,6 @@
                 >
 
 
-
                 <!-- PHONE -->
 
                 <label for="phone">
@@ -378,7 +368,6 @@
                     placeholder="Your phone"
                     required
                 >
-
 
 
                 <!-- PRODUCT -->
@@ -416,7 +405,6 @@
                 </select>
 
 
-
                 <!-- QUANTITY -->
 
                 <label for="quantity">
@@ -434,7 +422,6 @@
                 >
 
 
-
                 <!-- ADDRESS -->
 
                 <label for="address">
@@ -448,7 +435,6 @@
                     rows="4"
                     required
                 ></textarea>
-
 
 
                 <!-- TOTAL -->
@@ -466,22 +452,27 @@
                 </div>
 
 
-
                 <!-- SUBMIT -->
 
                 <button
                     type="submit"
                 >
-                    PLACE ORDER
+                    SUBMIT
                 </button>
 
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="message"
+                    class="message"
+                ></div>
 
             </form>
 
         </div>
 
     </section>
-
 
 
     <!-- ================= ABOUT ================= -->
@@ -510,7 +501,6 @@
     </section>
 
 
-
     <!-- ================= FOOTER ================= -->
 
     <footer id="contact">
@@ -527,7 +517,6 @@
     </footer>
 
 
-
     <!-- ================= JAVASCRIPT ================= -->
 
     <script>
@@ -541,6 +530,17 @@
         const totalElement =
             document.getElementById("total");
 
+        const cartCount =
+            document.getElementById("cartCount");
+
+        const orderForm =
+            document.getElementById("orderForm");
+
+        const message =
+            document.getElementById("message");
+
+
+        /* PRODUCT PRICES */
 
         const prices = {
 
@@ -554,6 +554,13 @@
 
         };
 
+
+        /* CART */
+
+        let cart = 0;
+
+
+        /* CALCULATE TOTAL */
 
         function calculateTotal() {
 
@@ -575,6 +582,8 @@
         }
 
 
+        /* SELECT PRODUCT */
+
         function selectProduct(product) {
 
             productSelect.value =
@@ -582,10 +591,23 @@
 
             quantityInput.value = 1;
 
+            cart++;
+
+            cartCount.textContent =
+                cart;
+
             calculateTotal();
+
+            document
+                .getElementById("order")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
 
         }
 
+
+        /* PRODUCT CHANGE */
 
         productSelect.addEventListener(
             "change",
@@ -593,16 +615,88 @@
         );
 
 
+        /* QUANTITY CHANGE */
+
         quantityInput.addEventListener(
             "input",
             calculateTotal
         );
 
 
+        /* FORM */
+
+        orderForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById(
+                        "full_name"
+                    ).value.trim();
+
+                const phone =
+                    document.getElementById(
+                        "phone"
+                    ).value.trim();
+
+                const product =
+                    productSelect.value;
+
+                const quantity =
+                    quantityInput.value;
+
+                const address =
+                    document.getElementById(
+                        "address"
+                    ).value.trim();
+
+
+                if (
+                    name === "" ||
+                    phone === "" ||
+                    product === "" ||
+                    address === ""
+                ) {
+
+                    message.textContent =
+                        "Please complete all fields.";
+
+                    message.className =
+                        "message error";
+
+                    return;
+
+                }
+
+
+                message.textContent =
+                    "Thank you, " +
+                    name +
+                    "! Your demo order has been submitted.";
+
+                message.className =
+                    "message success";
+
+
+                console.log({
+                    name: name,
+                    phone: phone,
+                    product: product,
+                    quantity: quantity,
+                    address: address
+                });
+
+            }
+        );
+
+
+        /* INITIAL TOTAL */
+
         calculateTotal();
 
     </script>
-
 
 </body>
 
