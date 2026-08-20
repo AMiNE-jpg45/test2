@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UrbanStore</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            URBAN<span>STORE</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#order">Order</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#shop" class="cart">
+            🛒 Cart
+        </a>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="subtitle">
+                NEW COLLECTION 2026
+            </p>
+
+            <h1>
+                URBAN<br>
+                STYLE
+            </h1>
+
+            <p class="hero-text">
+                Discover our latest collection of
+                premium streetwear and accessories.
+            </p>
+
+            <a href="#shop" class="button">
+                SHOP NOW
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SHOP ================= -->
+
+    <section id="shop" class="shop">
+
+        <div class="section-title">
+
+            <p>
+                OUR COLLECTION
+            </p>
+
+            <h2>
+                Featured Products
+            </h2>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <span class="badge">
+                        NEW
+                    </span>
+
+                    <img
+                        src="images.jpg"
+                        alt="Urban Sneakers"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Urban Sneakers
+                    </h3>
+
+                    <p>
+                        Modern everyday sneakers
+                        with a premium design.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            149.90 DT
+                        </strong>
+
+                        <a
+                            href="#order"
+                            class="add"
+                            onclick="selectProduct('Urban Sneakers')"
+                        >
+                            ADD +
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <span class="badge">
+                        HOT
+                    </span>
+
+                    <img
+                        src="images2.jpg"
+                        alt="Classic Cap"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Classic Cap
+                    </h3>
+
+                    <p>
+                        Minimal premium cap for
+                        everyday outfits.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            49.90 DT
+                        </strong>
+
+                        <a
+                            href="#order"
+                            class="add"
+                            onclick="selectProduct('Classic Cap')"
+                        >
+                            ADD +
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="images3.jpg"
+                        alt="Street Backpack"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Street Backpack
+                    </h3>
+
+                    <p>
+                        Strong and stylish backpack
+                        for everyday use.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            89.90 DT
+                        </strong>
+
+                        <a
+                            href="#order"
+                            class="add"
+                            onclick="selectProduct('Street Backpack')"
+                        >
+                            ADD +
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <span class="badge">
+                        SALE
+                    </span>
+
+                    <img
+                        src="image4.jpg"
+                        alt="Street Hoodie"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Street Hoodie
+                    </h3>
+
+                    <p>
+                        Comfortable oversized hoodie
+                        with a clean design.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            119.90 DT
+                        </strong>
+
+                        <a
+                            href="#order"
+                            class="add"
+                            onclick="selectProduct('Street Hoodie')"
+                        >
+                            ADD +
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BANNER ================= -->
+
+    <section class="banner">
+
+        <div>
+
+            <p>
+                LIMITED COLLECTION
+            </p>
+
+            <h2>
+                LOOK GOOD.<br>
+                FEEL GOOD.
+            </h2>
+
+            <a
+                href="#shop"
+                class="button"
+            >
+                EXPLORE
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ORDER ================= -->
+
+    <section id="order" class="order">
+
+        <div class="order-container">
+
+
+            <div class="order-text">
+
+                <p class="subtitle">
+                    ORDER NOW
+                </p>
+
+                <h2>
+                    Get Your<br>
+                    Favorite Product
+                </h2>
+
+                <p>
+                    Fill in your information and
+                    choose the product you want.
+                </p>
+
+            </div>
+
+
+
+            <!-- FORM CONNECTED TO PHP -->
+
+            <form
+                class="order-form"
+                action="order.php"
+                method="POST"
+            >
+
+
+                <!-- NAME -->
+
+                <label for="full_name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="full_name"
+                    name="full_name"
+                    placeholder="Your name"
+                    required
+                >
+
+
+
+                <!-- PHONE -->
+
+                <label for="phone">
+                    Phone
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Your phone"
+                    required
+                >
+
+
+
+                <!-- PRODUCT -->
+
+                <label for="product">
+                    Product
+                </label>
+
+                <select
+                    id="product"
+                    name="product"
+                    required
+                >
+
+                    <option value="">
+                        Select a product
+                    </option>
+
+                    <option value="Urban Sneakers">
+                        Urban Sneakers - 149.90 DT
+                    </option>
+
+                    <option value="Classic Cap">
+                        Classic Cap - 49.90 DT
+                    </option>
+
+                    <option value="Street Backpack">
+                        Street Backpack - 89.90 DT
+                    </option>
+
+                    <option value="Street Hoodie">
+                        Street Hoodie - 119.90 DT
+                    </option>
+
+                </select>
+
+
+
+                <!-- QUANTITY -->
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    min="1"
+                    max="20"
+                    value="1"
+                    required
+                >
+
+
+
+                <!-- ADDRESS -->
+
+                <label for="address">
+                    Delivery Address
+                </label>
+
+                <textarea
+                    id="address"
+                    name="address"
+                    placeholder="Your address"
+                    rows="4"
+                    required
+                ></textarea>
+
+
+
+                <!-- TOTAL -->
+
+                <div class="total-box">
+
+                    <span>
+                        Total:
+                    </span>
+
+                    <strong id="total">
+                        0.00 DT
+                    </strong>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                >
+                    PLACE ORDER
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section
+        id="about"
+        class="about"
+    >
+
+        <p class="subtitle">
+            ABOUT US
+        </p>
+
+        <h2>
+            SIMPLE.<br>
+            MODERN.<br>
+            DIFFERENT.
+        </h2>
+
+        <p>
+            Urban Store is a modern online shop
+            focused on stylish products and a
+            simple shopping experience.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="contact">
+
+        <div class="footer-logo">
+            URBAN<span>STORE</span>
+        </div>
+
+        <p>
+            © 2026 UrbanStore.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const productSelect =
+            document.getElementById("product");
+
+        const quantityInput =
+            document.getElementById("quantity");
+
+        const totalElement =
+            document.getElementById("total");
+
+
+        const prices = {
+
+            "Urban Sneakers": 149.90,
+
+            "Classic Cap": 49.90,
+
+            "Street Backpack": 89.90,
+
+            "Street Hoodie": 119.90
+
+        };
+
+
+        function calculateTotal() {
+
+            const product =
+                productSelect.value;
+
+            const quantity =
+                parseInt(quantityInput.value) || 1;
+
+            const price =
+                prices[product] || 0;
+
+            const total =
+                price * quantity;
+
+            totalElement.textContent =
+                total.toFixed(2) + " DT";
+
+        }
+
+
+        function selectProduct(product) {
+
+            productSelect.value =
+                product;
+
+            quantityInput.value = 1;
+
+            calculateTotal();
+
+        }
+
+
+        productSelect.addEventListener(
+            "change",
+            calculateTotal
+        );
+
+
+        quantityInput.addEventListener(
+            "input",
+            calculateTotal
+        );
+
+
+        calculateTotal();
+
+    </script>
+
+
+</body>
+
+</html>

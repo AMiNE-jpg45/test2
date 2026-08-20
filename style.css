@@ -1,0 +1,652 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 80px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #0b0b0b;
+
+    border-bottom: 1px solid #222;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #888;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.cart {
+    color: white;
+
+    text-decoration: none;
+
+    border: 1px solid #444;
+
+    padding: 10px 16px;
+
+    transition: .3s;
+}
+
+.cart:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 700px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.3)
+        ),
+        url("images/hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.subtitle {
+    color: #aaa;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+
+    font-size: clamp(
+        65px,
+        10vw,
+        140px
+    );
+
+    line-height: .85;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 35px;
+}
+
+.hero-text {
+
+    max-width: 500px;
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+}
+
+.button {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 16px 32px;
+
+    background: white;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.button:hover {
+    background: #ccc;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   SHOP
+========================= */
+
+.shop {
+
+    padding: 120px 7%;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title p {
+
+    color: #777;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+
+    font-size: 50px;
+}
+
+
+/* PRODUCTS */
+
+.products {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: 25px;
+}
+
+.product {
+
+    background: #151515;
+
+    transition: .4s;
+
+    overflow: hidden;
+}
+
+.product:hover {
+
+    transform: translateY(-10px);
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-image {
+
+    height: 350px;
+
+    background: #222;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.product-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.product:hover img {
+
+    transform: scale(1.08);
+}
+
+
+/* BADGE */
+
+.badge {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    background: white;
+
+    color: black;
+
+    padding: 8px 12px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    z-index: 2;
+}
+
+
+/* PRODUCT INFO */
+
+.product-info {
+
+    padding: 25px;
+}
+
+.product-info h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.product-info p {
+
+    color: #888;
+
+    line-height: 1.5;
+
+    min-height: 48px;
+}
+
+.product-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 25px;
+}
+
+.product-bottom strong {
+
+    font-size: 18px;
+}
+
+.add {
+
+    background: white;
+
+    color: black;
+
+    padding: 10px 15px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.add:hover {
+
+    background: #ccc;
+}
+
+
+/* =========================
+   BANNER
+========================= */
+
+.banner {
+
+    min-height: 550px;
+
+    padding: 80px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.8),
+            rgba(0,0,0,.2)
+        ),
+        url("images/banner.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.banner p {
+
+    color: #aaa;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.banner h2 {
+
+    font-size: 70px;
+
+    line-height: .9;
+}
+
+
+/* =========================
+   ORDER
+========================= */
+
+.order {
+
+    padding: 120px 7%;
+
+    background: #111;
+}
+
+.order-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+}
+
+.order-text h2 {
+
+    font-size: 60px;
+
+    line-height: .95;
+
+    margin-bottom: 30px;
+}
+
+.order-text p:last-child {
+
+    color: #888;
+
+    line-height: 1.7;
+
+    max-width: 400px;
+}
+
+
+/* FORM */
+
+.order-form {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.order-form label {
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    color: #aaa;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    background: #080808;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+
+    border-color: white;
+}
+
+.order-form button {
+
+    padding: 17px;
+
+    background: white;
+
+    color: black;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+.order-form button:hover {
+
+    background: #ccc;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+
+    padding: 130px 8%;
+
+    max-width: 1000px;
+}
+
+.about h2 {
+
+    font-size: 75px;
+
+    line-height: .9;
+
+    margin-bottom: 35px;
+}
+
+.about > p:last-child {
+
+    max-width: 550px;
+
+    color: #888;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    border-top: 1px solid #222;
+
+    padding: 50px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #666;
+}
+
+.footer-logo {
+
+    color: white;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+
+    color: #777;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 600px;
+
+        padding: 60px 25px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+
+        letter-spacing: -3px;
+    }
+
+    .shop {
+        padding: 80px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 40px;
+    }
+
+    .banner {
+        padding: 60px 25px;
+    }
+
+    .banner h2 {
+        font-size: 50px;
+    }
+
+    .order {
+        padding: 80px 20px;
+    }
+
+    .order-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .order-text h2 {
+        font-size: 50px;
+    }
+
+    .about {
+        padding: 90px 25px;
+    }
+
+    .about h2 {
+        font-size: 55px;
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+}
